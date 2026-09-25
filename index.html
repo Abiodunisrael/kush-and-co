@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary meta -->
+  <title>KUSH &amp; CO — NMCN License Renewal &amp; Community Outreach in Nigeria</title>
+  <meta name="description" content="Nurse-led NMCN license renewal assistance and community health outreach across Nigeria. Fast, reliable, stress-free." />
+  <meta name="theme-color" content="#0d9488" />
+  <meta name="author" content="KUSH & CO" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="KUSH &amp; CO — NMCN License Renewal" />
+  <meta property="og:description" content="Nurse-led NMCN license renewal and community health outreach across Nigeria." />
+  <meta property="og:image" content="images/hero.jpg" />
+  <meta property="og:site_name" content="KUSH & CO" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="KUSH &amp; CO — NMCN License Renewal" />
+  <meta name="twitter:description" content="Nurse-led NMCN license renewal and community health outreach across Nigeria." />
+  <meta name="twitter:image" content="images/hero.jpg" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div data-include="partials/header.html"></div>
+
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero container">
+      <div class="hero-text">
+        <span class="badge" id="heroBadge">💉 Nurse-led support · Nigeria</span>
+        <h1 id="heroTitle">Renew your NMCN license.<br>Serve your <span>community</span>.</h1>
+        <p id="heroSubtitle">
+          KUSH &amp; CO helps Nigerian nurses renew their licenses with the
+          Nursing and Midwifery Council of Nigeria — stress-free — and
+          organizes health outreaches that reach the people who need them most.
+        </p>
+        <div class="hero-buttons">
+          <a href="#request" class="btn btn-primary">Renew My License</a>
+          <a href="#outreach" class="btn btn-outline">See Outreaches</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img id="heroImage" src="images/hero.jpg" alt="KUSH & CO nurse" loading="eager" />
+      </div>
+    </section>
+
+    <!-- ===================== SERVICES ===================== -->
+    <section class="section container" id="services">
+      <div class="section-head">
+        <h2>How KUSH &amp; CO can help</h2>
+        <p>Two focus areas, one goal — keeping nurses practising and communities healthy.</p>
+      </div>
+
+      <div class="services">
+        <article class="service-card">
+          <div class="icon" aria-hidden="true">📋</div>
+          <h3>NMCN License Renewal</h3>
+          <p>Step-by-step guidance through your renewal — paperwork, deadlines, fees, and portal submissions handled with care.</p>
+        </article>
+        <article class="service-card">
+          <div class="icon" aria-hidden="true">📅</div>
+          <h3>Deadline Reminders</h3>
+          <p>Never miss a renewal window again. Get reminders so your license stays active and your practice uninterrupted.</p>
+        </article>
+        <article class="service-card">
+          <div class="icon" aria-hidden="true">🌍</div>
+          <h3>Community Outreach</h3>
+          <p>Planning, coordinating, and running health outreaches — screenings, education, and care for underserved communities.</p>
+        </article>
+        <article class="service-card">
+          <div class="icon" aria-hidden="true">🤝</div>
+          <h3>Volunteer Coordination</h3>
+          <p>Connecting nurses and health workers with outreach opportunities that match their skills and passion.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== GALLERY ===================== -->
+    <section class="section container" id="gallery">
+      <div class="section-head">
+        <h2>From the field</h2>
+        <p>Moments from recent KUSH &amp; CO outreaches.</p>
+      </div>
+      <div class="gallery" id="galleryGrid">
+        <p class="loading">Loading gallery…</p>
+      </div>
+    </section>
+
+    <!-- ===================== OUTREACH ===================== -->
+    <section class="section container" id="outreach">
+      <div class="section-head">
+        <h2>Upcoming outreaches</h2>
+        <p>Join KUSH &amp; CO in bringing healthcare to communities that need it most.</p>
+      </div>
+      <div class="outreach-grid" id="outreachGrid" aria-live="polite">
+        <p class="loading">Loading outreaches…</p>
+      </div>
+    </section>
+
+    <!-- ===================== RENEWALS ===================== -->
+    <section class="section container" id="renewals">
+      <div class="section-head">
+        <h2>Recently Renewed Licenses</h2>
+        <p>Real nurses KUSH &amp; CO has helped renew their NMCN license.</p>
+      </div>
+
+      <div class="renewals-grid" id="renewalsGrid">
+        <p class="loading">Loading renewals…</p>
+      </div>
+
+      <p class="renewals-note">
+        Only first names and renewal dates are shown, with each nurse's permission.
+      </p>
+    </section>
+
+    <!-- ===================== REQUEST FORM ===================== -->
+    <section class="section container" id="request">
+      <div class="section-head">
+        <h2>Request license renewal help</h2>
+        <p>Fill this in and KUSH &amp; CO will reach out within 24 hours.</p>
+      </div>
+
+      <form id="renewalForm" class="form" novalidate>
+        <div class="form-row">
+          <label for="name">Full name</label>
+          <input type="text" id="name" name="name" required autocomplete="name" placeholder="e.g. Adaeze Okafor" />
+          <span class="error" data-for="name"></span>
+        </div>
+
+        <div class="form-row">
+          <label for="license">NMCN license number</label>
+          <input type="text" id="license" name="license" required placeholder="e.g. RN123456" />
+          <span class="error" data-for="license"></span>
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com" />
+          <span class="error" data-for="email"></span>
+        </div>
+
+        <div class="form-row">
+          <label for="whatsapp">WhatsApp number</label>
+          <input type="tel" id="whatsapp" name="whatsapp" required autocomplete="tel" placeholder="e.g. 0803 123 4567" />
+          <span class="error" data-for="whatsapp"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit Request</button>
+        <p class="form-status" id="formStatus" role="status"></p>
+      </form>
+    </section>
+
+  </main>
+
+  <div data-include="partials/footer.html"></div>
+
+  <script src="js/include.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

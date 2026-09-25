@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <title>KUSH &amp; CO — Admin</title>
+  <link rel="stylesheet" href="admin.css?v=5" />
+</head>
+<body class="admin-body">
+
+  <!-- ===================== LOGIN VIEW ===================== -->
+  <div id="loginView" class="login-wrap">
+    <form id="loginForm" class="login-card" autocomplete="off">
+      <div class="logo"><span class="dot"></span><span class="logo-text">KUSH <em>&amp;</em> CO</span></div>
+      <h1>Admin Panel</h1>
+      <p>Enter your password to manage the site.</p>
+      <div class="form-row">
+        <label for="password">Password</label>
+        <input type="password" id="password" required autocomplete="current-password" />
+        <span class="error" id="loginError"></span>
+      </div>
+      <button type="submit" class="btn btn-primary">Sign In</button>
+    </form>
+  </div>
+
+  <!-- ===================== DASHBOARD VIEW ===================== -->
+  <div id="dashboardView" class="dashboard" hidden>
+
+    <header class="admin-header">
+      <div class="logo"><span class="dot"></span><span class="logo-text">KUSH <em>&amp;</em> CO</span></div>
+      <div class="admin-header-actions">
+        <a href="index.html" target="_blank" class="btn btn-outline btn-sm">View Site ↗</a>
+        <button type="button" id="logoutBtn" class="btn btn-outline btn-sm">Log Out</button>
+      </div>
+    </header>
+
+    <nav class="admin-tabs" role="tablist">
+      <button type="button" class="tab-btn active" data-tab="outreaches">Outreaches</button>
+      <button type="button" class="tab-btn" data-tab="gallery">Gallery</button>
+      <button type="button" class="tab-btn" data-tab="settings">Site Settings</button>
+      <button type="button" class="tab-btn" data-tab="submissions">
+        Submissions
+        <span class="tab-badge" id="subsBadge" hidden>0</span>
+      </button>
+    </nav>
+
+    <main class="admin-main">
+
+      <!-- OUTREACHES -->
+      <section class="tab-panel active" data-panel="outreaches">
+        <div class="panel-head">
+          <h2>Outreach Events</h2>
+          <button type="button" class="btn btn-primary btn-sm" id="addOutreachBtn">+ Add Outreach</button>
+        </div>
+        <div id="outreachList" class="item-list"></div>
+        <div class="save-bar">
+          <button type="button" class="btn btn-primary" id="saveOutreachesBtn">Save Outreaches</button>
+          <span class="save-status" id="outreachSaveStatus"></span>
+        </div>
+      </section>
+
+      <!-- GALLERY -->
+      <section class="tab-panel" data-panel="gallery">
+        <div class="panel-head">
+          <h2>Gallery</h2>
+          <label class="btn btn-primary btn-sm upload-btn">
+            + Upload Image
+            <input type="file" id="galleryUpload" accept="image/*" hidden />
+          </label>
+        </div>
+        <p class="hint">Recommended: JPG or PNG, under 300KB, at least 800px wide.</p>
+        <div id="galleryList" class="gallery-admin"></div>
+        <div class="save-bar">
+          <button type="button" class="btn btn-primary" id="saveGalleryBtn">Save Gallery</button>
+          <span class="save-status" id="gallerySaveStatus"></span>
+        </div>
+      </section>
+
+      <!-- SETTINGS -->
+      <section class="tab-panel" data-panel="settings">
+        <div class="panel-head"><h2>Site Settings</h2></div>
+
+        <h3 class="group-title">Hero</h3>
+        <div class="form-grid">
+          <div class="form-row">
+            <label for="sHeroBadge">Hero badge</label>
+            <input type="text" id="sHeroBadge" />
+          </div>
+          <div class="form-row full">
+            <label for="sHeroTitle">Hero title (HTML allowed)</label>
+            <input type="text" id="sHeroTitle" />
+          </div>
+          <div class="form-row full">
+            <label for="sHeroSubtitle">Hero subtitle</label>
+            <textarea id="sHeroSubtitle" rows="3"></textarea>
+          </div>
+          <div class="form-row full">
+            <label for="sHeroImage">Hero image path or URL</label>
+            <input type="text" id="sHeroImage" />
+            <label class="btn btn-outline btn-sm upload-btn" style="margin-top:.5rem;width:fit-content">
+              Upload Hero Image
+              <input type="file" id="heroUpload" accept="image/*" hidden />
+            </label>
+          </div>
+        </div>
+
+        <h3 class="group-title">Contact</h3>
+        <div class="form-grid">
+          <div class="form-row">
+            <label for="sEmail">Contact email</label>
+            <input type="email" id="sEmail" />
+          </div>
+          <div class="form-row">
+            <label for="sLocation">Location</label>
+            <input type="text" id="sLocation" />
+          </div>
+          <div class="form-row full">
+            <label for="sFooterTagline">Footer tagline</label>
+            <input type="text" id="sFooterTagline" />
+          </div>
+        </div>
+
+        <h3 class="group-title">Social media (footer icons)</h3>
+        <p class="hint">Paste a full URL. Leave blank to hide an icon.</p>
+        <div class="form-grid">
+          <div class="form-row"><label for="sFacebook">Facebook</label><input type="url" id="sFacebook" placeholder="https://facebook.com/yourpage" /></div>
+          <div class="form-row"><label for="sInstagram">Instagram</label><input type="url" id="sInstagram" placeholder="https://instagram.com/yourhandle" /></div>
+          <div class="form-row"><label for="sTwitter">X (Twitter)</label><input type="url" id="sTwitter" placeholder="https://x.com/yourhandle" /></div>
+          <div class="form-row"><label for="sLinkedin">LinkedIn</label><input type="url" id="sLinkedin" placeholder="https://linkedin.com/in/you" /></div>
+          <div class="form-row"><label for="sTiktok">TikTok</label><input type="url" id="sTiktok" placeholder="https://tiktok.com/@you" /></div>
+          <div class="form-row"><label for="sYoutube">YouTube</label><input type="url" id="sYoutube" placeholder="https://youtube.com/@you" /></div>
+        </div>
+
+        <div class="save-bar">
+          <button type="button" class="btn btn-primary" id="saveSettingsBtn">Save Settings</button>
+          <span class="save-status" id="settingsSaveStatus"></span>
+        </div>
+      </section>
+
+      <!-- SUBMISSIONS -->
+      <section class="tab-panel" data-panel="submissions">
+        <div class="panel-head">
+          <h2>Renewal Requests</h2>
+          <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+            <button type="button" class="btn btn-outline btn-sm" id="backupBtn">⬇ Download Backup</button>
+            <button type="button" class="btn btn-outline btn-sm" id="refreshSubsBtn">Refresh</button>
+          </div>
+        </div>
+
+        <!-- Search + Filter bar -->
+        <div class="subs-toolbar">
+          <div class="subs-search">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input type="search" id="subsSearch" placeholder="Search by name or license number…" autocomplete="off" />
+            <button type="button" id="subsSearchClear" class="subs-clear" aria-label="Clear" hidden>×</button>
+          </div>
+          <div class="subs-filters" role="group" aria-label="Filter by status">
+            <button type="button" class="subs-filter active" data-filter="all">All</button>
+            <button type="button" class="subs-filter" data-filter="pending">⏳ Pending</button>
+            <button type="button" class="subs-filter" data-filter="renewed">✓ Renewed</button>
+          </div>
+        </div>
+
+        <div id="submissionsList" class="item-list"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="js/admin.js?v=6"></script>
+</body>
+</html>

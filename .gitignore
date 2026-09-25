@@ -1,0 +1,20 @@
+# Secrets — never push
+config.php
+api/config.php
+.env
+*.env
+
+# Real user data (PII)
+data/submissions.json
+
+# User uploads
+uploads/*
+!uploads/.gitkeep
+
+# Junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+node_modules/
+vendor/
